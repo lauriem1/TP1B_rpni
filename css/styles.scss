@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Charte typographique
+ * Menu
+ * Grille
+ * Mise en page
+ *** Contenus principal et complémentaire
+ *** Architecture des CSS (liste de définitions)
+ *** Pied de page
+ */
+
+/* Normalize
+   ========================================================================== */
+@import "_normalize";
+
+/* Utilitaires
+   ========================================================================== */
+@import "_utilitaires";
+
+/* Charte typographique
+   ========================================================================== */
+@import "_typo";
+
+/* Menu
+   ========================================================================== */
+@import "_menu";
+
+/* Grille
+   ========================================================================== */
+@import "_grille";
+
+/* Mise en page
+   ========================================================================== */
+
+
+
+/*** Contenu principal ***/
+header {
+    background-color: var(--couleur-background);
+}
+
+/*** Architecture des CSS ***/
+dl {
+    padding: 1rem 0;
+    background-color: rgba(145, 0, 145, 0.06);
+}
+
+dl,
+.infos {
+    border-radius: 10px;
+}
+
+.infos {
+    padding: 1rem;
+    margin-bottom: 3rem;
+    background-color: rgb(234, 226, 234);
+}
+
+@media (min-width: 601px) {
+    .infos {
+        padding: 1rem calc(10% + 1rem);
+        box-shadow: var(--box-shadow);
+        width: 120%;
+        margin-left: -10%;
+        margin-top: 1rem;
+    }
+}
+
+dt {
+    font-family: NewsCycle-bold, sans-serif;
+    color: var(--couleur-dominante);
+}
+
+@media (min-width: 601px) {
+    dt {
+      
+    }
+}
+
+dd {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+dd ul {
+    padding-left: 2rem;
+    margin: 0;
+}
+
+strong.purple {
+    color: var(--couleur-dominante);
+    text-transform: uppercase;
+}
+
+/*** Pied de page ***/
+footer {
+    background-color: black;
+    padding: 1px 0;
+}

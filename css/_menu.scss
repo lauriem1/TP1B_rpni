@@ -1,0 +1,119 @@
+/**
+ * @author Laurie Martineau courriel
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ */
+
+/****** Base commune *******/
+
+/* Bouton du menu */
+.nav__control {
+    background-color: rgba(145, 0, 145, 0.2);
+    border: none;
+    padding: 10px;
+    min-width: 40px;
+}
+
+@media (min-width: 600px) {
+    .nav__control {
+        display: none;
+    }
+}
+
+.nav__control:hover,
+.nav__control:active {
+    color: #fff;
+    background-color: darkmagenta;
+}
+
+.nav__control:focus {
+    /* En mettant la règle outline: none;, les styles du navigateur
+     * pour les éléments en cours de focus sont effacés. Il faut alors
+     * les remplacer par d'autres styles qui peuvent être plus
+     * en accord avec la direction visuelle du projet.
+     */
+    outline: none;
+    /* AUTRES STYLES EN REMPLACEMENT DU OUTLINE */
+    /*
+     * Les règles outline-offset et outline permettent
+     * de modifier l'apparence du outline par défaut des navigateurs.
+     */
+    outline-offset: -5px;
+    outline: darkmagenta auto 5px;
+}
+
+/* Liste du menu */
+.nav_liste {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: none;
+    color: var(--couleur-lien-nav);
+}
+
+// @media (min-width: 600px) {
+//     .nav__liste {
+//         display: inline-block;
+//     }
+// }
+
+/* Liens du menu */
+.nav__lien {
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.nav__lien:hover {
+    color: var(--couleur-dominante);
+}
+
+.nav__lien:active {
+    color: var(--couleur-lien-nav);
+}
+
+.nav__lien:link,
+.nav__lien:visited {
+    color: var(--couleur-dominante);
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.nav__link:focus {
+    outline-offset: -5px;
+    outline: darkmagenta auto 5px;
+}
+
+@media (min-width: 600px) {
+    .nav__link:focus {
+        outline-offset: 0;
+    }
+}
+
+/** Une classe nav__link--active
+    sert à définir un état différent
+    pour l'item de menu actif
+    **/
+.nav__link--active {
+    border-left: 5px solid rgba(101, 68, 180, 1);
+}
+
+@media (min-width: 600px) {
+    .nav__link--active {
+        border-left: none;
+        border-bottom: 5px solid rgba(101, 68, 180, 1);
+    }
+}
+
+/** Liens nav footer **/
+.lien_footer {
+    color: var(--couleur-lien-footer);
+}
