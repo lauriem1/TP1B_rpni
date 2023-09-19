@@ -11,13 +11,7 @@
  * - Liens footer
  */
 
-
-/* Liste du menu */
-.nav_liste {
-    list-style: none;
-    font-weight: 700;
-}
-
+/* Variables couleurs */
 $couleur-dominante: black;
 $couleur-background: #eafaf1;
 $couleur-lien-footer: #1fe374;
@@ -25,6 +19,19 @@ $couleur-lien-nav: #00ad6a;
 $couleur-bouton: #1fe374;
 $couleur-bouton-footer: linear-gradient(90deg, #00ab6a, #23ea76);
 $couleur-secondaire: white;
+
+
+/* Liste du menu */
+.nav_liste {
+    padding-left: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 2%;
+    list-style: none;
+    font-weight: 700;
+}
+
 
 .nav__lien:link,
 .nav__lien:visited {
@@ -48,13 +55,21 @@ $couleur-secondaire: white;
     text-decoration: none;
 
 }
+.nav__lien-btn {
+    color: $couleur-lien-nav;
+    text-decoration: none;
+}
 
 .bouton-nav {
     color: $couleur-lien-nav;
     border-color: $couleur-lien-nav;
-    background-color: transparent;
+    border-style: solid;
     border-width: 2px;
+    background-color: transparent;
+    font-weight: 700;
+    padding: 4px 8px;
 }
+
 
 /** Une classe nav__link--active
     sert à définir un état différent
@@ -67,28 +82,26 @@ $couleur-secondaire: white;
         border-left: none;
     }
 }
-
+ /** Nav Footer **/
 .nav-footer {
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     font-weight: 400;
 }
 
 .ul-footer_colonne1 {
     list-style: none;
-    display: flex;
-    flex-direction: column;
 }
 
 .ul-footer_colonne2 {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+   
 }
 
 .ul-footer_colonne3 {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+   
 }
 
 .lien_footer {

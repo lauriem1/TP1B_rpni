@@ -10,7 +10,8 @@
  * Menu
  * Grille
  * Mise en page
- *** Contenus principal et complémentaire
+ *** Contenus principal adaptation mobile
+ *** Contenus principal adaptation table
  *** Architecture des CSS (liste de définitions)
  *** Pied de page
  */
@@ -38,61 +39,121 @@
 /* Mise en page
    ========================================================================== */
 
+/** Couleurs **/
+$couleur-secondaire: black;
+$couleur-background: #eafaf1;
+$couleur-lien-footer: #1fe374;
+$couleur-dominante: #00ad6a;
+$couleur-bouton: #1fe374;
+$couleur-bouton-footer: linear-gradient(90deg, #00ab6a, #23ea76);
+$couleur-texte: #474951;
+$couleur-secondaire2: white;
 
-
-/*** Contenu principal ***/
-header {
+/*** Contenu principal - Adaptation Mobile ***/
+.header {
+    background-color: var($couleur-secondaire2);
+    border-bottom: solid 1px #D6DAE5;
+}
+.main {
     background-color: var(--couleur-background);
 }
 
-/*** Architecture des CSS ***/
-dl {
-    padding: 1rem 0;
-    background-color: rgba(145, 0, 145, 0.06);
-}
-
-dl,
-.infos {
-    border-radius: 10px;
-}
-
-.infos {
-    padding: 1rem;
-    margin-bottom: 3rem;
-    background-color: rgb(234, 226, 234);
-}
-
-@media (min-width: 601px) {
-    .infos {
-        padding: 1rem calc(10% + 1rem);
-        box-shadow: var(--box-shadow);
-        width: 120%;
-        margin-left: -10%;
-        margin-top: 1rem;
-    }
-}
-
-dt {
-    font-family: NewsCycle-bold, sans-serif;
-    color: var(--couleur-dominante);
-}
-
-
-dd {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-}
-
-dd ul {
-    padding-left: 2rem;
+.entete-carte1 {
+    text-align: center;
+    color: white;
+    background-color: $couleur-dominante;
     margin: 0;
+    border-radius;
 }
 
-// strong.purple {
-//     color: var(--couleur-dominante);
-//     text-transform: uppercase;
-// }
+h2 {
+    text-align: center;
+    color: $couleur-dominante;
+}
+
+.texte-desc {
+    font-family: "WorkSans-Regular";
+    color: $couleur-dominante;
+}
+
+.texte-incitatif {
+    font-family: "WorkSans-Regular";
+    color: $couleur-texte;
+}
+
+.liste-avantages {
+    font-family: "WorkSans-Regular";
+    color: $couleur-texte;
+}
+
+.carte1 {
+    border-style: solid;
+    border-color: $couleur-background;
+    background-color: $couleur-secondaire2;
+    border-color: $couleur-dominante;
+    margin: 2%;
+}
+
+.carte-lien {
+    color: black;
+}
+
+.carte__sous-titre {
+    font-variant: small-caps;
+    font-family: "WorkSans-SemiBold";
+    color: $couleur-texte;
+}
+
+.bouton-carte {
+    color: $couleur-texte;
+    background-color: #1fe374;
+    border: none;
+    padding: 8px 32px 12px;
+}
+
+.carte-prix {
+    font-family: "WorkSans-Light";
+    color: #83858B;
+    font-weight: lighter;
+}
+
+.carte2 {
+    background-color: $couleur-secondaire2;
+    border-style: solid;
+    border-color: #D6DAE5;
+    margin: 2%;
+}
+
+.logo-header {
+    margin: 2rem;
+    width: 119px;
+    height: 49px;
+}
+
+.commentaire-compagnie {
+    text-align: center;
+    border-bottom: solid 1px #D6DAE5;
+}
+.icone-compagnie {
+    width: 80px;
+    height: 80px;
+}
+
+.auteur-citation {
+    text-align: center;
+    font-variant: small-caps;
+    font-family: "WorkSans-SemiBold";
+    color: $couleur-dominante;
+}
+
+
+
+
+/*** Contenu principal - Adaptation Table ***/
+
+
+
+
 
 /*** Pied de page ***/
 footer {
@@ -112,6 +173,7 @@ footer {
     color: var(--couleur-secondaire);
     text-decoration: none;
 }
+
 .logo_footer {
     display: block;
     width: 150px;
