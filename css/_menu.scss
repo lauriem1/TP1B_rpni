@@ -22,19 +22,30 @@ $couleur-secondaire: white;
 
 
 /* Liste du menu */
+
 .nav_liste {
-    padding-left: 45%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 2%;
+    flex-direction: column;
+    justify-content: flex-start;
     list-style: none;
     font-weight: 700;
+
+    @media (min-width:800px) {
+        padding-left: 45%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 2%;
+        list-style: none;
+        font-weight: 700;
+    }
 }
 
 
+
+
 .nav__lien:link,
-.nav__lien:visited {
+.nav_lien:visited {
     color: $couleur-dominante;
     text-decoration: none;
 }
@@ -45,9 +56,8 @@ $couleur-secondaire: white;
 }
 
 
-.nav__link:focus {
-    outline-offset: -5px;
-
+.nav__lien:focus {
+    outline-offset: 10px;
 }
 
 .nav__lien__page-courante {
@@ -55,6 +65,7 @@ $couleur-secondaire: white;
     text-decoration: none;
 
 }
+
 .nav__lien-btn {
     color: $couleur-lien-nav;
     text-decoration: none;
@@ -68,6 +79,7 @@ $couleur-secondaire: white;
     background-color: transparent;
     font-weight: 700;
     padding: 4px 8px;
+    width: 100px;
 }
 
 
@@ -82,26 +94,38 @@ $couleur-secondaire: white;
         border-left: none;
     }
 }
- /** Nav Footer **/
+
+/** Nav Footer **/
 .nav-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding: 0;
     list-style: none;
     font-weight: 400;
+
+    @media(min-width:800px) {
+        display: flex;
+        justify-content: row;
+        padding: 1rem;
+        margin-top: 0;
+    }
+}
+
+@mixin rules_ul-footer {
+    list-style: none;
+    padding: 0;
 }
 
 .ul-footer_colonne1 {
-    list-style: none;
+    @include rules_ul-footer
 }
 
 .ul-footer_colonne2 {
-    list-style: none;
-   
+    @include rules_ul-footer
 }
 
 .ul-footer_colonne3 {
-    list-style: none;
-   
+    @include rules_ul-footer
 }
 
 .lien_footer {
@@ -111,15 +135,6 @@ $couleur-secondaire: white;
 
 .lien_footer:hover {
     color: $couleur-secondaire;
-}
-
-.bouton-footer {
-    position: relative;
-    font-weight: 700;
-    border: none;
-    padding: 2rem;
-
-    background-image: $couleur-bouton-footer;
 }
 
 .nom-colonne__lien_footer {

@@ -51,19 +51,35 @@ $couleur-secondaire2: white;
 
 /*** Contenu principal - Adaptation Mobile ***/
 .header {
-    background-color: var($couleur-secondaire2);
+    background-color: $couleur-secondaire2;
     border-bottom: solid 1px #D6DAE5;
-}
-.main {
-    background-color: var(--couleur-background);
+
+    @media(min-width:800px) {
+        background-color: $couleur-background;
+        border: solid 1px $couleur-background;
+    }
 }
 
-.entete-carte1 {
-    text-align: center;
-    color: white;
-    background-color: $couleur-dominante;
-    margin: 0;
-    border-radius;
+.main {
+    background-color: $couleur-background;
+}
+
+.disposition-carte {
+    @media(min-width:800px) {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        justify-content: center;
+        margin-right: 20%;
+        margin-left: 7%;
+    }
+}
+
+.texte_avant_carte {
+    @media (min-width:800px) {
+        margin: 0%;
+        padding: 0%;
+    }
 }
 
 h2 {
@@ -74,11 +90,13 @@ h2 {
 .texte-desc {
     font-family: "WorkSans-Regular";
     color: $couleur-dominante;
+    margin: 5%
 }
 
 .texte-incitatif {
     font-family: "WorkSans-Regular";
     color: $couleur-texte;
+    margin: 5%;
 }
 
 .liste-avantages {
@@ -86,12 +104,31 @@ h2 {
     color: $couleur-texte;
 }
 
+.entete-carte1 {
+    text-align: center;
+    color: white;
+    background-color: $couleur-dominante;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
 .carte1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-style: solid;
     border-color: $couleur-background;
     background-color: $couleur-secondaire2;
     border-color: $couleur-dominante;
     margin: 2%;
+
+    @media (min-width:800px) {
+        justify-content: center;
+        margin: 0%;
+        padding: 0%;
+    }
+
 }
 
 .carte-lien {
@@ -102,19 +139,46 @@ h2 {
     font-variant: small-caps;
     font-family: "WorkSans-SemiBold";
     color: $couleur-texte;
+    padding-left: 40px;
 }
 
 .bouton-carte {
     color: $couleur-texte;
+    font-weight: 700;
     background-color: #1fe374;
     border: none;
     padding: 8px 32px 12px;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    margin-right: 25%;
+    margin-left: 25%;
+
+    &.bouton-carte:hover {
+        padding: 10px 35px 14px;
+    }
+
+    @media(min-width:800px) {
+        display: flex;
+        justify-content: center;
+        margin: 16%;
+        white-space: nowrap;
+    }
 }
 
 .carte-prix {
     font-family: "WorkSans-Light";
     color: #83858B;
     font-weight: lighter;
+    padding-left: 40px;
+}
+
+.entete-carte2 {
+    background-color: #F2F3F3;
+    padding: 16px;
+    margin: 0;
+    color: $couleur-texte;
+    text-align: center;
+    font-weight: 200;
 }
 
 .carte2 {
@@ -122,6 +186,12 @@ h2 {
     border-style: solid;
     border-color: #D6DAE5;
     margin: 2%;
+
+    @media (min-width:800px) {
+        justify-content: center;
+        margin: 0%;
+        margin-top: 11%;
+    }
 }
 
 .logo-header {
@@ -134,9 +204,28 @@ h2 {
     text-align: center;
     border-bottom: solid 1px #D6DAE5;
 }
+
 .icone-compagnie {
+    margin-top: 15%;
     width: 80px;
     height: 80px;
+
+    @media (min-width:800px) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.citation {
+    @media(min-width:800px) {
+        text-align: center;
+        padding: 5px 20px;
+        font-family: "WorkSans-Light";
+        font-weight: 400;
+        font-size: 1.5em;
+        white-space: wrap;
+        width: 100%;
+    }
 }
 
 .auteur-citation {
@@ -146,22 +235,73 @@ h2 {
     color: $couleur-dominante;
 }
 
+.titre-faq {
+    color: black;
+    text-align: start;
+
+    @media(min-width:800px) {
+        padding: 10px 20px;
+        line-height: 1.5rem;
+    }
+}
+
+.section-faq {
+    background-color: $couleur-secondaire2;
+    padding: 24px;
+    font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $couleur-texte;
+    font-weight: 400;
+
+    
+    @media(min-width:800px) {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+}
 
 
 
-/*** Contenu principal - Adaptation Table ***/
+.question {
+    color: $couleur-secondaire;
+    font-size: 1.25em;
+}
 
 
 
-
-
-/*** Pied de page ***/
+/*** Pied de page***/
 footer {
     background-color: var(--couleur-dominante);
 }
 
+.bouton-footer {
+    position: relative;
+    width: 90%;
+    font-weight: 700;
+    border: none;
+    padding: 2rem;
+    background-image: $couleur-bouton-footer;
+    margin: 5%;
+
+    @media(min-width:800px) {
+        float: left;
+        margin: 5%;
+        width: 30%;
+    }
+}
+
+
 .texte-footer {
     color: var(--couleur-texte-footer);
+    padding: 12px 40px 96px;
+
+    @media (min-width:800px) {
+        text-align: left;
+        padding: 12px 24px;
+    }
 }
 
 .texte-footer_lien:link,
@@ -175,7 +315,12 @@ footer {
 }
 
 .logo_footer {
-    display: block;
-    width: 150px;
-    padding-top: 5%;
+    width: 140px;
+    margin: 8%;
+
+    @media (min-width: 800px) {
+        width: 160px;
+        margin: 5%;
+        margin-bottom: 0%;
+    }
 }
